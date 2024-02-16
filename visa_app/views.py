@@ -38,8 +38,10 @@ def visa_details(request):
         category = response.json()
     else:
         category = []
+        
+    featureblog = Blogs.objects.filter(blogs_type="Featured Articles").order_by("-id")
 
-    context = {"country": country, "category": category}
+    context = {"country": country, "category": category, "featureblog":featureblog}
     return render(request, "VisaPage/Visa1.html", context)
 
 
