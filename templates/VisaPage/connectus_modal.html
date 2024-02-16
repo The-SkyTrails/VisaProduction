@@ -1,0 +1,124 @@
+<div
+            class="modal"
+            id="connectusModal"
+            tabindex="-1"
+            aria-labelledby="connectusModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content" style="background: #cad7f7">
+                <!-- Modal Header -->
+                <div class="modal-header" style="border-bottom: none">
+                  <h5
+                    class="modal-title Overseasonjourneytext2"
+                    id="connectusModalLabel"
+                  >
+                    Book Your Consultation
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <!-- Add your form here -->
+                  <form action="{% url "connectus" %}" method="post">
+                    {% csrf_token %}
+                    <!-- Full Name and Last Name -->
+                    <div class="row">
+                      <div class="mb-3 col-md-6">
+                        <label for="fullName" class="form-label"
+                          >First name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Firstname" name="Firstname"
+                          placeholder="Enter your First name"
+                        />
+                      </div>
+                      <div class="mb-3 col-md-6">
+                        <label for="lastName" class="form-label"
+                          >Last name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="lastname" name="lastname"
+                          placeholder="Enter your last name"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Phone and Email -->
+                    <div class="row">
+                      <div class="mb-3 col-md-6">
+                        <label for="number" class="form-label"
+                          >Phone Number</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Phone_number" name="Phone_number"
+                          placeholder="Enter your Phone Number"
+                        />
+                      </div>
+                      <div class="mb-3 col-md-6">
+                        <label for="email" class="form-label"
+                          >Email ID (optional)</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="Email" name="Email"
+                          placeholder="Enter your Email ID "
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="visa" class="form-label"
+                            >Visa Service Interested In</label
+                            >
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            name="visa_services" id="visa_services"
+                            >
+
+                            <option>Select</option>
+                            <option value="Work Visa">Work Visa</option>
+                            <option value="Tourist Visa">Tourist Visa</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="notes" class="form-label"
+                            >Remarks</label
+                            >
+                            <textarea class="form-control" name="notes" id="notes"></textarea>
+                        </div>
+                    </div>
+                    
+
+                    
+
+                    <!-- Submit button -->
+                    <button
+                      type="submit"
+                      class="btn customHeaderButton"
+                      style="align-items: center"
+                    >
+                      Confirm
+                    </button>
+                  </form>
+                </div>
+                <!-- Modal Footer -->
+              </div>
+            </div>
+          </div>
